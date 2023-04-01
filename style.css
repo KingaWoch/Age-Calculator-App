@@ -16,3 +16,102 @@
   padding: 0;
   box-sizing: border-box;
 }
+
+html,
+body {
+  min-height: 100vh;
+}
+
+body {
+  background-color: var(--Light-grey);
+  display: grid;
+  place-content: center;
+  gap: 2rem;
+}
+
+main {
+  background-color: var(--Off-white);
+  width: 600px;
+  padding: 2rem;
+  border-radius: 1.2rem 1.2rem 7rem 1.2rem;
+}
+
+header {
+  border-bottom: 1px solid var(--Light-grey);
+  padding-bottom: 2rem;
+}
+
+form {
+  display: flex;
+  gap: 1rem;
+  position: relative;
+}
+
+.input-field {
+  display: flex;
+  flex-direction: column;
+  text-transform: uppercase;
+  gap: 0.2rem;
+  width: 130px;
+  font-size: 0.7rem;
+  color: var(--Smokey-grey);
+  font-weight: 800;
+}
+
+input {
+  border: 1px solid var(--Light-grey);
+  border-radius: 0.3rem;
+  padding-inline: 0.5rem;
+  color: var(--Off-black);
+  font-size: var(--fs);
+  font-weight: 700;
+  background-color: var(--Off-white);
+  cursor: pointer;
+}
+
+input::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+}
+
+input:focus {
+  outline: 1px solid var(--Purple);
+}
+
+button {
+  background-color: var(--Purple);
+  border: none;
+  border-radius: 50%;
+  height: 70px;
+  width: 70px;
+  display: grid;
+  place-content: center;
+  position: absolute;
+  right: 0;
+  bottom: -4rem;
+  cursor: pointer;
+}
+
+button:hover {
+  background-color: var(--Off-black);
+}
+
+section {
+  padding-top: 2rem;
+}
+
+section p {
+  font-size: 3rem;
+  font-weight: 800;
+  font-style: italic;
+  color: var(--Purple);
+}
+
+section p span {
+  color: var(--Off-black);
+}
+
+footer {
+  font-size: 0.7rem;
+  color: var(--Smokey-grey);
+  text-align: center;
+}
