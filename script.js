@@ -8,9 +8,21 @@ const errorMsgs = document.querySelectorAll(".error-msg");
 const form = document.querySelector("form");
 
 form.addEventListener("submit", (e) => {
+  const now = new Date();
+  const year = now.getFullYear();
+  const month = now.getMonth(); // 0 - January,  11- December
+  const day = now.getDate();
+  console.log(day, month, year);
+
   e.preventDefault();
 
-  if (!inputs[0].value.match(dayRegEx)) {
+  // day validation
+
+  if (!inputs[0].value) {
+    inputs[0].classList.add("invalid");
+    labels[0].classList.add("invalid");
+    errorMsgs[0].innerHTML = "This field is required";
+  } else if (!inputs[0].value.match(dayRegEx)) {
     inputs[0].classList.add("invalid");
     labels[0].classList.add("invalid");
     errorMsgs[0].innerHTML = "Must be a valid day";
@@ -19,6 +31,8 @@ form.addEventListener("submit", (e) => {
     labels[0].classList.remove("invalid");
     errorMsgs[0].innerHTML = "";
   }
+
+  // month validation
 
   if (!inputs[1].value.match(monthRegEx)) {
     inputs[1].classList.add("invalid");
@@ -30,20 +44,40 @@ form.addEventListener("submit", (e) => {
     errorMsgs[1].innerHTML = "";
   }
 
-  if (inputs[1].value === "2" && !inputs[0].value.match(FabruaryDaysRegEx)) {
-    inputs[0].classList.add("invalid");
-    labels[0].classList.add("invalid");
-    errorMsgs[0].innerHTML = "Must be a valid day";
+  // if (inputs[1].value === "2" && !inputs[0].value.match(FabruaryDaysRegEx)) {
+  //   inputs[0].classList.add("invalid");
+  //   labels[0].classList.add("invalid");
+  //   errorMsgs[0].innerHTML = "Must be a valid day";
+  // } else if (
+  //   inputs[1].value === "02" &&
+  //   !inputs[0].value.match(FabruaryDaysRegEx)
+  // ) {
+  //   inputs[0].classList.add("invalid");
+  //   labels[0].classList.add("invalid");
+  //   errorMsgs[0].innerHTML = "Must be a valid day";
+  // } else {
+  //   inputs[0].classList.remove("invalid");
+  //   labels[0].classList.remove("invalid");
+  //   errorMsgs[0].innerHTML = "";
+  // }
+
+  // year validation
+
+  if (inputs[2].value > year) {
+    inputs[2].classList.add("invalid");
+    labels[2].classList.add("invalid");
+    errorMsgs[2].innerHTML = "Must be in the past";
   } else if (
-    inputs[1].value === "02" &&
-    !inputs[0].value.match(FabruaryDaysRegEx)
+    inputs[2].value == year &&
+    inputs[1].value >= month + 1 &&
+    inputs[0].value > day
   ) {
-    inputs[0].classList.add("invalid");
-    labels[0].classList.add("invalid");
-    errorMsgs[0].innerHTML = "Must be a valid day";
+    inputs[2].classList.add("invalid");
+    labels[2].classList.add("invalid");
+    errorMsgs[2].innerHTML = "Must be in the past";
   } else {
-    inputs[0].classList.remove("invalid");
-    labels[0].classList.remove("invalid");
-    errorMsgs[0].innerHTML = "";
+    inputs[2].classList.remove("invalid");
+    labels[2].classList.remove("invalid");
+    errorMsgs[2].innerHTML = "";
   }
 });
