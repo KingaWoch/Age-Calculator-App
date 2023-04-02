@@ -50,11 +50,14 @@ form {
 .input-field {
   display: flex;
   flex-direction: column;
-  text-transform: uppercase;
   gap: 0.2rem;
   width: 130px;
   font-size: 0.7rem;
   color: var(--Smokey-grey);
+}
+
+.input-field label {
+  text-transform: uppercase;
   font-weight: 800;
 }
 
@@ -69,12 +72,26 @@ input {
   cursor: pointer;
 }
 
+input.invalid {
+  border: 1px solid var(--Light-red);
+}
+
+label.invalid {
+  color: var(--Light-red);
+}
+
 input::-webkit-inner-spin-button {
   -webkit-appearance: none;
 }
 
 input:focus {
   outline: 1px solid var(--Purple);
+}
+
+.error-msg {
+  color: var(--Light-red);
+  text-transform: none;
+  font-weight: 400;
 }
 
 button {
