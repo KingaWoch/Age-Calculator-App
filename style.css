@@ -134,3 +134,58 @@ footer {
   color: var(--Smokey-grey);
   text-align: center;
 }
+
+/* RESPONSIVE */
+
+@media (max-width: 600px) {
+  body {
+    place-content: start;
+    justify-content: center;
+    margin-top: 5rem;
+  }
+
+  main {
+    width: 330px;
+    padding: 3rem 1rem;
+  }
+
+  header {
+    padding-bottom: 3rem;
+  }
+
+  .input-field {
+    width: 80px;
+  }
+
+  input {
+    font-size: 1.4rem;
+    padding-block: 0.2rem;
+  }
+
+  .error-msg {
+    font-size: 0.6rem;
+  }
+
+  button {
+    right: 7.2rem;
+    bottom: -5rem;
+    width: 60px;
+    height: 60px;
+  }
+
+  button img {
+    height: 30px;
+  }
+
+  section {
+    padding-top: 3rem;
+  }
+
+  .result {
+    font-size: 3.5rem;
+  }
+
+  .result span {
+    font-size: 3rem;
+  }
+}
