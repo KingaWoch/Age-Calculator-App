@@ -121,7 +121,22 @@ function showResult() {
   let d = day - inputs[0].value;
   let m = month - inputs[1].value;
   let y = year - inputs[2].value;
-  result[0].innerHTML = `${y} <span>years</span>`;
-  result[1].innerHTML = `${m} <span>months</span>`;
-  result[2].innerHTML = `${d} <span>days</span>`;
+
+  if (y === 1) {
+    result[0].innerHTML = `${y} <span>year</span>`;
+  } else {
+    result[0].innerHTML = `${y} <span>years</span>`;
+  }
+
+  if (m === 1) {
+    result[1].innerHTML = `${m} <span>month</span>`;
+  } else {
+    result[1].innerHTML = `${m} <span>months</span>`;
+  }
+
+  if (d === 1) {
+    result[2].innerHTML = `${d} <span>day</span>`;
+  } else {
+    result[2].innerHTML = `${d} <span>days</span>`;
+  }
 }
