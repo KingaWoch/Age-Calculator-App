@@ -116,14 +116,16 @@ section {
   padding-top: 2rem;
 }
 
-section p {
-  font-size: 3rem;
+.result {
+  font-size: 5rem;
   font-weight: 800;
   font-style: italic;
   color: var(--Purple);
+  line-height: 1;
 }
 
-section p span {
+.result span {
+  font-size: 4rem;
   color: var(--Off-black);
 }
 
